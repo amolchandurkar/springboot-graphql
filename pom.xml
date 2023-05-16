@@ -16,6 +16,9 @@
 	<properties>
 		<java.version>11</java.version>
 		<graphql-version>15.0.0</graphql-version><!--7.2.0-->
+		<coveo-formatter-maven-plugin.version>2.11</coveo-formatter-maven-plugin.version>
+		<dependency-check-maven.version>8.2.1</dependency-check-maven.version>
+		<fmt-maven-plugin.version>2.19</fmt-maven-plugin.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,6 +29,16 @@
 			<groupId>com.graphql-java-kickstart</groupId>
 			<artifactId>graphql-spring-boot-starter</artifactId>
 			<version>${graphql-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.spotify.fmt</groupId>
+			<artifactId>fmt-maven-plugin</artifactId>
+			<version>${fmt-maven-plugin.version}</version>
 		</dependency>
 
 		<dependency>
@@ -41,6 +54,56 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>${dependency-check-maven.version}</version>
+				<configuration>
+					<ossindexAnalyzerEnabled>false</ossindexAnalyzerEnabled>
+					<retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
+					<nuspecAnalyzerEnabled>false</nuspecAnalyzerEnabled>
+					<assemblyAnalyzerEnabled>true</assemblyAnalyzerEnabled>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<!-- By default the plugin's "check" goal is bound to Maven's verify phase: $ mvn verify-->
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify.fmt</groupId>
+				<artifactId>fmt-maven-plugin</artifactId>
+				<version>${fmt-maven-plugin.version}</version>
+				<configuration>
+					<verbose>true</verbose>
+					<filesNamePattern>.*\.java</filesNamePattern>
+					<skip>false</skip>
+					<skipSourceDirectory>false</skipSourceDirectory>
+					<skipTestSourceDirectory>false</skipTestSourceDirectory>
+					<skipSortingImports>false</skipSortingImports>
+					<style>google</style>
+				</configuration>
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>format</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!--plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<release>${java.version}</release>
+					<showDeprecation>true</showDeprecation>
+				</configuration>
+			</plugin-->
 		</plugins>
 	</build>
 
