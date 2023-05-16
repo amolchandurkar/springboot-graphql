@@ -63,6 +63,7 @@
 					<retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
 					<nuspecAnalyzerEnabled>false</nuspecAnalyzerEnabled>
 					<assemblyAnalyzerEnabled>true</assemblyAnalyzerEnabled>
+					<suppressionFile>owasp-dependency-supression.xml</suppressionFile>
 				</configuration>
 				<executions>
 					<execution>
