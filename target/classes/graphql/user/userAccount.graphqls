@@ -1,0 +1,6 @@
+type UserAccount{
+    id: ID!
+    userName: String!
+    userEmailId: String!
+    userLanguage: UserLanguage!
+}

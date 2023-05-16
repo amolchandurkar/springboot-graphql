@@ -1,0 +1,4 @@
+# This is root of all the graphql query
+type RootQuery{
+    userAccount(id: ID): UserAccount
+}
