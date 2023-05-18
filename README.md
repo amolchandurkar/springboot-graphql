@@ -1,4 +1,4 @@
-# springboot-graphql- Inporgress...
+# springboot-graphql- Inprogress...
 GraphQL with Springboot
 ## What is GraphQL and its feature
 GraphQL is an open-source query language and runtime for APIs. GraphQL allows clients to request and retrieve specific 
@@ -21,20 +21,4 @@ its flexibility, allowing clients to request only the data they need and enablin
 without breaking existing clients. It is widely supported in various programming languages and has a growing ecosystem of tools 
 and libraries.
 
-## Developers Guide
-Need to add details
-### Libraries reqire for Spring-boot server project
- GraphQL depends on graphql-spring-boot-, which internally depends on graphql-java-tools, graphql-java. We only require graphql-spring 
- boot and spring boot parent pom to work with our simple graphql server project.
-#### graphql-java-tools 
-This library allows you to build graph schema using the graphql schema language. This library takes a schema first approach and 
-allows us to bring our own java object (matching the schema types) to fill in the implementation. This approach allows us to have 
-complete control over the schema and have a good overview of what types are available. Graphql tools by default will look for all 
-**/*.graphqls files on the classpath and it will automatically combine and compile them into one graphql schema at application runtime. 
-This is available at localhost:port/graphql/schema.json.
-Now We can create graphql schema file with root type query then we can create a matching GraphqlQueryResolver which will match the root 
-queries. We then start graphql playground to view and play with our first graphql query.
-### Maven Repos
-https://repo.maven.apache.org/maven2/com/graphql-java-kickstart/
-### Maven Plugins
-Need to add list    
+[GraphQL Developers Guide](README-DEVELOPERS-GUIDE.md)
