@@ -15,7 +15,8 @@
 	<description>GraphQL server project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
-		<graphql-version>15.0.0</graphql-version><!--7.2.0-->
+		<graphql-version>12.0.0</graphql-version>
+		<graphql.extended.scalars.version>17.0</graphql.extended.scalars.version>
 		<coveo-formatter-maven-plugin.version>2.11</coveo-formatter-maven-plugin.version>
 		<dependency-check-maven.version>8.2.1</dependency-check-maven.version>
 		<fmt-maven-plugin.version>2.19</fmt-maven-plugin.version>
@@ -29,6 +30,11 @@
 			<groupId>com.graphql-java-kickstart</groupId>
 			<artifactId>graphql-spring-boot-starter</artifactId>
 			<version>${graphql-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java-extended-scalars</artifactId>
+			<version>17.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -50,10 +56,10 @@
 
 	<build>
 		<plugins>
-			<plugin>
+			<!--plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+			</plugin-->
 			<plugin>
 				<groupId>org.owasp</groupId>
 				<artifactId>dependency-check-maven</artifactId>
@@ -63,11 +69,11 @@
 					<retireJsAnalyzerEnabled>false</retireJsAnalyzerEnabled>
 					<nuspecAnalyzerEnabled>false</nuspecAnalyzerEnabled>
 					<assemblyAnalyzerEnabled>true</assemblyAnalyzerEnabled>
+					<suppressionFile>owasp-dependency-supression.xml</suppressionFile>
 				</configuration>
 				<executions>
 					<execution>
 						<goals>
-							<!-- By default the plugin's "check" goal is bound to Maven's verify phase: $ mvn verify-->
 							<goal>check</goal>
 						</goals>
 					</execution>
@@ -95,7 +101,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
@@ -103,7 +109,7 @@
 					<release>${java.version}</release>
 					<showDeprecation>true</showDeprecation>
 				</configuration>
-			</plugin-->
+			</plugin>
 		</plugins>
 	</build>
 

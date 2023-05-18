@@ -1,0 +1,5 @@
+enum UserLanguage{
+    IND
+    US
+    UK
+}
