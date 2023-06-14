@@ -1,0 +1,9 @@
+spring.application.name: springboot-graphql-with-resolver-app
+servlet.multipart.max-file-size: 2MB
+server.http2.enabled: true
+
+graphql.servlet.maxQueryDepth: 100
+graphql.servlet.exception-handlers-enabled: false
+graphql.servlet.tracingEnabled: false
+
+graphql.playground.enabled: true

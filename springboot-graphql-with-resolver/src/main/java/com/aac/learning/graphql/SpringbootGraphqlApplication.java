@@ -1,4 +1,4 @@
-package com.aac.learning.graphql.springbootgraphql;
+package com.aac.learning.graphql;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

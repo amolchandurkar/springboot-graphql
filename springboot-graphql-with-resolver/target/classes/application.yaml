@@ -1,4 +1,4 @@
-spring.application.name: springboot-graphql-application
+spring.application.name: springboot-graphql-with-resolver-app
 servlet.multipart.max-file-size: 2MB
 server.http2.enabled: true
 

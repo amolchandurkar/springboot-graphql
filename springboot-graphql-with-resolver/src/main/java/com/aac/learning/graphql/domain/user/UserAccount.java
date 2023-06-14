@@ -1,4 +1,4 @@
-package com.aac.learning.graphql.springbootgraphql.domain.user;
+package com.aac.learning.graphql.domain.user;
 
 import java.util.UUID;
 import lombok.Builder;

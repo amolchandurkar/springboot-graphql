@@ -21,4 +21,4 @@ its flexibility, allowing clients to request only the data they need and enablin
 without breaking existing clients. It is widely supported in various programming languages and has a growing ecosystem of tools 
 and libraries.
 
-[GraphQL Developers Guide](README-DEVELOPERS-GUIDE.md)
+[GraphQL Developers Guide](developers-guide/README-developers-guide.md)
